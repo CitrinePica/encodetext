@@ -1,0 +1,150 @@
+
+body {
+    background-color: #0A1931 !important;
+    color: #FFC947 !important;
+    font-family: 'Exo 2', sans-serif !important;
+}
+*{ 
+    transition:all .3s cubic-bezier(.38,1.15,.7,1.12);
+} 
+::selection {
+    color: #0A1931;
+    background-color: #ffd700;
+}
+section  {
+    margin:50px auto;
+} 
+button:focus,textarea:focus, input:focus  {outline:0 !important;}
+.row {
+    margin: 0 auto !important;
+}
+.col-sm-8 {
+    width: 100%;
+    margin-bottom: 35px;
+} 
+h1 {
+    text-align: center;
+} 
+.modal-content {
+    background-color: #0A1931 !important;
+}
+.modal-body {
+    text-align: center;
+}
+.modal-body p {
+    margin: 15px 0 0px;
+}
+.modal-footer {
+    justify-content: space-between !important;
+}
+.modal-footer img {
+    width: 20px;
+}
+img.qr-pay {
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+h4.modal-title {
+    font-weight: 800 !important;
+}
+textarea, input {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none !important;  
+    border: none;
+}
+textarea:nth-of-type(2) {
+    font-weight: 900;
+}
+#keyEncode {
+    display: none;
+}
+input {
+    height: 35px;
+    border-radius: 8px; 
+}
+.options-encode {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+footer {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+} 
+footer img:nth-of-type(n) {
+    width: 32px;
+    padding: 6px 5px;
+    background: #fff;
+    border-radius: 23px 24px;
+} 
+.footer { 
+    display: flex;
+    align-items: center;
+}
+.footer .box {
+    margin: 20px;
+}
+.footer .col-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ button.button, button.option { 
+    background-color: transparent;
+    padding: 5px 25px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 18px;
+    border: none;
+    color: #ffd700;
+    transition: all .3s ease-in-out;
+    border:2px solid #ffd700;
+}
+button.option { 
+    margin: 0px 10px 20px;
+}
+.active-option ,button.button:hover, button.option:hover  {
+    background-color: #ffd700 !important;
+    border:2px solid #ffd700 !important;
+    color: #0A1931 !important;
+}
+.circle {
+    display: inline-grid;
+    place-items: center;
+    background-color: #ffd700;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center; 
+    height: 45px;
+    border-radius: 50%;
+    width: 45px;
+
+}
+.convex-concave {
+    box-shadow: -6px -6px 8px 0 #ffd7004d inset, 7px 7px 12px 0 rgb(220 235 194 / 40%) inset, 6px 6px 14px 0 #ffd7009e, -3px -3px 12px 0 rgb(220 235 194 / 40%);
+}
+.convex-concave:hover {
+    box-shadow: 6px 6px 8px 0 rgba(170, 168, 55, 0.5) inset,
+   -7px -7px 12px 0 rgba(220, 235, 194, 0.4) inset,
+   -6px -6px 14px 0 rgba(168, 170, 55, 0.5),
+   3px 3px 12px 0 rgba(220, 235, 194, 0.4);
+   cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    footer {
+      position: relative;
+    }
+    .col-sm {
+        min-height: 55px;
+    }
+  }
+

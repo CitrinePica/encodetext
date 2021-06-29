@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Encode Text">
+    <link rel="shortcut icon" href="logo.jpg" />
+    <title>Encode Text</title>
+    <link rel="stylesheet" href="encodetex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <section>
+    <header>
+        <h1>Mã hóa tin nhắn</h1>
+    </header>
+    <div class='row container'>
+        <div class="col-sm-8"> 
+            <h3>Tin nhắn cần mã hóa</h3>
+            <textarea type='text' id='inputText' style='margin-bottom: 35px;' autofocus='true'></textarea>
+            <h3>Tin nhẵn đã mã hóa</h3>
+            <textarea type='text' id='encodeText'></textarea>
+            <button class='button' onclick='copyEncode()'>Copy</button>
+        </div>
+        <div class="col-sm-4 options-encode">
+            <h3>Phương thức mã hóa</h3>
+            <button class='option' onclick='chooseMethod("encodeAtbash")' value='Atbash'>Atbash</button>
+            <button class='option' onclick='chooseMethod("encodeCaesar")' value='Caesar'>Caesar</button>
+            <button class='option' onclick='chooseMethod("encodeCoordinates")' value='Coordinates'>Coordinates</button>
+            <button class='option active-option' onclick='chooseMethod("encodeMorse")' value='Morse'>Morse</button>
+            <button class='option' onclick='chooseMethod("encodeGronsfeld")' value='Gronsfeld'>Gronsfeld</button>
+            <button class='option' onclick='chooseMethod("encodePhone")' value='Phone'>Phone</button>
+            <button class='option' onclick='chooseMethod("encodePlayfair")' value='Playfair'>Playfair</button> 
+            <button class='option' onclick='chooseMethod("encodePyramid")' value='Pyramid'>Pyramid</button> 
+            <button class='option' onclick='chooseMethod("encodeSiamese")' value='Siamese'>Siamese</button> 
+            <button class='option' onclick='chooseMethod("encriptVigenere")' value='Vigenere'>Vigenère</button> 
+            <div  id='keyEncode'>
+                <h3>Khóa</h3>
+                <input type='text' name='keyEncode' id='input_keyEncode'/>
+                <input type='text' name='keyEncodeVinegene' id='input_keyEncodeVinegene' value='HUYHOANG'/>
+            </div>
+        </div> 
+    </div>
+    <footer>
+        <div class="row container footer">
+            <div class="col-sm col-sm-3">
+            Creator: Nguyễn Huy Hoàng
+            </div>
+            <div class="col-sm col-sm-6">
+                <button class='button'  data-toggle="modal" data-target="#donate" >Donate</button>    
+            </div>
+            <div class="col-sm col-sm-3">
+                <div class="box"> 
+                    <div class="circle convex-concave">
+                        <a href='https://www.facebook.com/HuyHoangNguyen2306/' target="_blank">
+                            <img src='mail.png' alt='mail'/>
+                        </a>
+                    </div>  
+                </div>  
+                <div class="box"> 
+                    <div class="circle convex-concave">
+                        <a href='https://www.facebook.com/HuyHoangNguyen2306/' target="_blank">
+                            <img src='facebook.png' alt='mail'/>
+                        </a>
+                    </div>  
+                </div> 
+                <div class="box"> 
+                    <div class="circle convex-concave">
+                        <a href='https://www.youtube.com/c/CitrineAcademy' target="_blank">
+                            <img src='youtube.png' alt='mail'/>
+                        </a>
+                    </div>  
+                </div> 
+            </div>
+        </div>
+    </footer>
+    <!-- The Modal -->
+  <div class="modal fade" id="donate">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal Header -->
+        <div class="modal-header" style="justify-content: center">
+          <h4 class="modal-title">Donate for Creator</h4> 
+        </div> 
+        <!-- Modal body -->
+        <div class="modal-body">
+         <img class='qr-pay'src='donate.jpg' alt='QR PAY'>
+         <p><i>*Các đồng chí thấy thú vị thì cho tôi cái bánh mì nha!!!!</i></p>
+        </div> 
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <div>
+                <img src='bread.png' alt='bread'/>
+                <span id='donateIndex'></span>
+            </div>
+            <button type="button" class="button" data-dismiss="modal">Đóng</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    </section> 
+</body>
+<script src='encodetex.jsx'></script>
+<script> 
+    updateVisitCount();
+    function updateVisitCount() {
+        fetch('https://api.countapi.xyz/hit/encodetext.html/visits')
+        .then(res => res.json())
+        .then(res => {  
+            localStorage.setItem("count_visitors", res.value)
+        })  
+        document.getElementById('donateIndex').innerHTML=localStorage.getItem("count_visitors")
+    }
+</script>
+<script src="select_to_voice_auto.jsx"></script>
+</html>
